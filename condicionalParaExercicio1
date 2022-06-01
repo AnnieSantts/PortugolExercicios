@@ -1,0 +1,51 @@
+programa {
+    inclua biblioteca Matematica
+	funcao inicio() {
+    /*1- A prefeitura de uma cidade fez uma pesquisa entre 20 de seus habitantes,
+    coletando dados sobre o sal�rio e n�mero de filhos. A prefeitura deseja saber
+    a) m�dia do sal�rio da popula��o;
+    b) m�dia do n�mero de filhos;
+    c) maior sal�rio;
+    d) percentual de pessoas com sal�rio at� R$100,00
+    
+    pr�xima instru��o
+    		*/
+		real salario, salarioTotal, mediaSalario, mediaFilhos, maiorSalario
+		inteiro filhos, filhosTotal, entrevistados, salarioAteCem
+		
+		entrevistados = 4
+		salarioTotal = 0.0
+		mediaSalario = 0.0
+		mediaFilhos = 0.0
+		filhosTotal = 0
+		maiorSalario = 0.0
+		salarioAteCem = 0
+		
+		para (inteiro i = 1; i <= entrevistados; i++){
+		    
+		    escreva(" Informe o " + i + "� sal�rio \n ")
+		    leia (salario)
+		    
+		    salarioTotal = (salarioTotal + salario)
+		    
+		    escreva ("Informe quantos filhos o entrevistado numero " + i + " possui ")
+		    leia(filhos)
+		    
+		   filhosTotal = (filhosTotal + filhos)
+		   
+		   se (salario > maiorSalario){
+		       maiorSalario = salario
+		   }
+		   // percentual de pessoas com sal�rio at� R$100,00.
+		   se (salario <= 100){
+		       salarioAteCem = (salarioAteCem + 1)
+		   }
+		}
+		mediaSalario = Matematica.arredondar((salarioTotal/entrevistados),2)
+		escreva ("A m�dia de sal�rio � de " + mediaSalario + "\n")
+		mediaFilhos = (filhosTotal/entrevistados)
+		escreva ( "A m�dia de filhos por habitante � de " + mediaFilhos +"\n")
+		escreva ("O maior sal�rio registrado foi o de " + maiorSalario)
+		escreva (" O percentual de pessoas com salario at� cem � de " + (salarioAteCem * 100 / entrevistados) + "%")
+	}
+}

@@ -1,0 +1,31 @@
+programa {
+	funcao inicio() {
+	    
+    /*
+    Elaborar um programa que efetue a leitura sucessiva de valores num�ricos e
+    apresente no final o total do somat�rio, a m�dia e o total de valores lidos. O programa
+    deve fazer as leituras dos valores enquanto o usu�rio estiver fornecendo valores
+    positivos. Ou seja, o programa deve parar quando o usu�rio fornecer um valor
+    negativo. */
+    
+    inteiro valoresLidos
+    real valorInformado, valorTotal
+    
+    valorInformado = 0.0
+    valorTotal = 0.0
+    valoresLidos = 0
+    
+    enquanto ( valorInformado >= 0){
+        escreva (" Informe um valor positivo para somar ou negativo para sair \n")
+        leia(valorInformado)
+        se (valorInformado >= 0){
+            valoresLidos ++
+            valorTotal = valorTotal + valorInformado
+        }
+    }
+    escreva(" O somat�rio dos valores lidos � de " + valorTotal + "\n")
+    escreva(" A quantidade de valores lidos foi de " + valoresLidos+ "\n")
+    escreva(" A m�dia dos valores informados � de " + (valorTotal/valoresLidos) + "\n")
+
+	}
+}
